@@ -1,0 +1,846 @@
+[
+  {
+    "Word": "each",
+    "Mean": "pron.各  各自 adj.每个  每 每一 adv.每个  int.每个  个人 个 自"
+  },
+  {
+    "Word": "eager",
+    "Mean": "adj.渴望的  热切的"
+  },
+  {
+    "Word": "eagle",
+    "Mean": "n.鹰 vt.(高尔夫)鹰击"
+  },
+  {
+    "Word": "ear",
+    "Mean": "n.耳朵  听力 听觉 倾听 麦穗 vi.长出麦穗"
+  },
+  {
+    "Word": "early",
+    "Mean": "adv.早  adj.早的  早期的"
+  },
+  {
+    "Word": "earn",
+    "Mean": "vt.赚得  挣得 获得 赚得 赢得 生利"
+  },
+  {
+    "Word": "earnest",
+    "Mean": "adj.认真的  诚恳的  重要的  n.真诚  重要的东西  定金 保证"
+  },
+  {
+    "Word": "earth",
+    "Mean": "n.地球  陆地 地面 泥土 世间 大地 地球人  vt.赶入洞中  提取 土壤 vi.躲入洞穴"
+  },
+  {
+    "Word": "earthquake",
+    "Mean": "n.地震  大震荡"
+  },
+  {
+    "Word": "ease",
+    "Mean": "n.容易  舒适 安乐 n.安逸  悠闲 vt.缓和  使...安乐  使...安 心 v.减轻  放松"
+  },
+  {
+    "Word": "easily",
+    "Mean": "adv.容易地  舒适的  无疑地"
+  },
+  {
+    "Word": "east",
+    "Mean": "n.东 东部 adv.在东方  向东方  adj.东方的"
+  },
+  {
+    "Word": "eastern",
+    "Mean": "adj.东部的  东方的  朝东的"
+  },
+  {
+    "Word": "easy",
+    "Mean": "adj.容易的  安逸的  不费力的  adv.慢慢地  当心地"
+  },
+  {
+    "Word": "eat",
+    "Mean": "vt.吃 喝 消耗 vi.吃饭  侵蚀 n.食物"
+  },
+  {
+    "Word": "echo",
+    "Mean": "n. 回声 回音 回波 反响 共鸣 vi. 重复 发回声  回响 仿效 vi. 回响 回荡 n. [计算机]  DOS命令：禁止(或允许)批处理命 令行显示屏幕上"
+  },
+  {
+    "Word": "economic",
+    "Mean": "adj.经济的  经济学的  有利可图的  n. [-s]经济学(状况等)"
+  },
+  {
+    "Word": "economical",
+    "Mean": "adj.节约的  节俭的  经济的  合算的  经济学的"
+  },
+  {
+    "Word": "economy",
+    "Mean": "n.经济  节约 节省 adj.经济型的"
+  },
+  {
+    "Word": "edge",
+    "Mean": "n.边缘  边 刀口 vt.给...加上边   缓慢横过  使逐渐丧失  vi.徐 徐前进"
+  },
+  {
+    "Word": "edition",
+    "Mean": "n.版 版本 版次"
+  },
+  {
+    "Word": "editor",
+    "Mean": "n.编辑  编者 校订者"
+  },
+  {
+    "Word": "educate",
+    "Mean": "vt.教育  培养 训练"
+  },
+  {
+    "Word": "education",
+    "Mean": "n.教育  培养 训导 教育学"
+  },
+  {
+    "Word": "effect",
+    "Mean": "n.结果  效果 效力 影响 要旨 vt.招致  引起 实现 达到 n.(pl.)财产  动产"
+  },
+  {
+    "Word": "effective",
+    "Mean": "adj.有效的  有影响的"
+  },
+  {
+    "Word": "efficiency",
+    "Mean": "n.效率  功效 效能"
+  },
+  {
+    "Word": "efficient",
+    "Mean": "adj.效率高的   有能力的  胜任的"
+  },
+  {
+    "Word": "effort",
+    "Mean": "n.努力  努力的成果"
+  },
+  {
+    "Word": "egg",
+    "Mean": "n.蛋 鸡蛋 卵 (俚语)人"
+  },
+  {
+    "Word": "eight",
+    "Mean": "num.八  八个 第八"
+  },
+  {
+    "Word": "eighteen",
+    "Mean": "num.十八  十八个"
+  },
+  {
+    "Word": "eighth",
+    "Mean": "num.第八  n.八分之一"
+  },
+  {
+    "Word": "eighty",
+    "Mean": "num.八十  八十个"
+  },
+  {
+    "Word": "either",
+    "Mean": "pron.(两者)任何一个    adj.任一  两方的  adv.也  conj.或  也"
+  },
+  {
+    "Word": "elaborate",
+    "Mean": "adj.复杂的  精心制作的  精细的  详尽的  精心的  v.详细地说明 用心地作  推敲"
+  },
+  {
+    "Word": "elastic",
+    "Mean": "n.橡皮圈  有松紧的东西   松紧带  adj.有弹性的   灵活的  可变的"
+  },
+  {
+    "Word": "elbow",
+    "Mean": "n.肘 肘部 弯管 急弯 扶手 v.用手肘推开   推挤"
+  },
+  {
+    "Word": "elder",
+    "Mean": "adj.年龄较大的   年长的  n.长者  长辈"
+  },
+  {
+    "Word": "elect",
+    "Mean": "vt.选举  推选 选择 n.当选人  被选的人  上帝的选民  adj.被选 的 选出的"
+  },
+  {
+    "Word": "election",
+    "Mean": "n.选举  选择权  当选"
+  },
+  {
+    "Word": "electric",
+    "Mean": "adj.电的  电动的  令人激动的  鲜亮的  n.供电"
+  },
+  {
+    "Word": "electrical",
+    "Mean": "adj.电的  电气科学的  与电有关的"
+  },
+  {
+    "Word": "electricity",
+    "Mean": "n.电 电学 电流"
+  },
+  {
+    "Word": "electron",
+    "Mean": "n.电子"
+  },
+  {
+    "Word": "electronic",
+    "Mean": "a.电子的"
+  },
+  {
+    "Word": "electronics",
+    "Mean": "n.电子学  电子器件"
+  },
+  {
+    "Word": "element",
+    "Mean": "n.成分  要素 元素 基本原理  (复数)恶劣天气"
+  },
+  {
+    "Word": "elementary",
+    "Mean": "adj.基本的  初级的  元素的"
+  },
+  {
+    "Word": "elephant",
+    "Mean": "n.象 庞大笨拙难处理的事物"
+  },
+  {
+    "Word": "elevator",
+    "Mean": "n.电梯  升降机  飞机升降舵  斗式皮带输送机"
+  },
+  {
+    "Word": "eleven",
+    "Mean": "num.十一  十一个"
+  },
+  {
+    "Word": "eleventh",
+    "Mean": "num.第十一(个)"
+  },
+  {
+    "Word": "eliminate",
+    "Mean": "vt.消灭  消除 排除 除去 剔除 忽略"
+  },
+  {
+    "Word": "elimination",
+    "Mean": "n.消灭  排除 除去 消除"
+  },
+  {
+    "Word": "else",
+    "Mean": "adv.其它  另外 否则 adj.别的  其他的"
+  },
+  {
+    "Word": "elsewhere",
+    "Mean": "ad.在别处  向别处"
+  },
+  {
+    "Word": "embarrass",
+    "Mean": "vt.使窘迫  使为难  阻碍 vi.变得困窘"
+  },
+  {
+    "Word": "embrace",
+    "Mean": "vt.拥抱  包括 包围 信奉 包含 n.拥抱"
+  },
+  {
+    "Word": "emerge",
+    "Mean": "vi.出现  涌现 冒出 (由某种状态)脱出   (事实)显现出来"
+  },
+  {
+    "Word": "emergency",
+    "Mean": "n.紧急情况  突然事件"
+  },
+  {
+    "Word": "emit",
+    "Mean": "vt.散发  发射 发表 发出 放射 吐露"
+  },
+  {
+    "Word": "emotion",
+    "Mean": "n.情感  感情 情绪 激动"
+  },
+  {
+    "Word": "emotional",
+    "Mean": "adj.感情的  情绪的"
+  },
+  {
+    "Word": "emperor",
+    "Mean": "n.皇帝"
+  },
+  {
+    "Word": "emphasis",
+    "Mean": "n.强调  重点 重要性"
+  },
+  {
+    "Word": "emphasize",
+    "Mean": "vt.强调  着重"
+  },
+  {
+    "Word": "empire",
+    "Mean": "n.帝国"
+  },
+  {
+    "Word": "employ",
+    "Mean": "vi.雇用  使用 使忙于"
+  },
+  {
+    "Word": "employee",
+    "Mean": "n.受雇者  雇员 雇工"
+  },
+  {
+    "Word": "employer",
+    "Mean": "n.雇佣者  雇主"
+  },
+  {
+    "Word": "employment",
+    "Mean": "n.工业  雇用 使用 职业"
+  },
+  {
+    "Word": "empty",
+    "Mean": "a.空的  空洞的"
+  },
+  {
+    "Word": "enable",
+    "Mean": "vt.使能够  使可能  [计算机]  使能"
+  },
+  {
+    "Word": "enclose",
+    "Mean": "vt.围住  圈起 附上 放入封套  [计算机]  括入"
+  },
+  {
+    "Word": "encounter",
+    "Mean": "vt. & vi.遭遇  遇到 偶然碰到  n.遭遇  意外的相见"
+  },
+  {
+    "Word": "encourage",
+    "Mean": "vt.鼓励  支持 助长 激励 支持"
+  },
+  {
+    "Word": "end",
+    "Mean": "n.末端  目标 结束 终点 vt. & vi.结束  终结 adj.最终的"
+  },
+  {
+    "Word": "ending",
+    "Mean": "n.结尾  结局 死亡"
+  },
+  {
+    "Word": "endless",
+    "Mean": "adj.无止境的   没完没了的"
+  },
+  {
+    "Word": "endure",
+    "Mean": "vt.忍受  容忍 vi.持久  持续"
+  },
+  {
+    "Word": "enemy",
+    "Mean": "n.敌人  仇敌 敌兵 敌对势力  有害物"
+  },
+  {
+    "Word": "energy",
+    "Mean": "n.活力  精力 能力 能 能量"
+  },
+  {
+    "Word": "enforce",
+    "Mean": "vt.实施  执行 强制 强迫 加强"
+  },
+  {
+    "Word": "engage",
+    "Mean": "vt.使从事于  聘用 答应 预定 使忙碌  订婚"
+  },
+  {
+    "Word": "engine",
+    "Mean": "n.发动机  引擎 机车 火车头  vt.装引擎"
+  },
+  {
+    "Word": "engineer",
+    "Mean": "n.工程师  技师 机械师  vt.操纵  设计 建造"
+  },
+  {
+    "Word": "engineering",
+    "Mean": "n.工程  工程学"
+  },
+  {
+    "Word": "England",
+    "Mean": "n.英格兰  英国"
+  },
+  {
+    "Word": "English",
+    "Mean": "n.英语  adj.英国人的   英国的  英语的  vt.译成英语  把...(外 来语言)加到英语中   Englishman  ['i ŋ gli ʃ m ə n] n.英国男子"
+  },
+  {
+    "Word": "enjoy",
+    "Mean": "vt. & vi.享受  欣赏 喜爱"
+  },
+  {
+    "Word": "enlarge",
+    "Mean": "vt.扩大  扩展 增大 放大"
+  },
+  {
+    "Word": "enormous",
+    "Mean": "adj.巨大的  庞大的"
+  },
+  {
+    "Word": "enough",
+    "Mean": "adj.足够的  adv.足够地  完全地  pron.足够  受够"
+  },
+  {
+    "Word": "ensure",
+    "Mean": "vt.保证  保护 赋予"
+  },
+  {
+    "Word": "enter",
+    "Mean": "vt. 走进 进入 参加 报名 开始 加入 报价 提出 vi. 进入 参 加 开始 上台 进入角色  [计算机]  送入"
+  },
+  {
+    "Word": "entertain",
+    "Mean": "vt. & vi.使欢乐  招待 怀抱"
+  },
+  {
+    "Word": "enthusiasm",
+    "Mean": "n.热情  热心 热忱 热衷的事物"
+  },
+  {
+    "Word": "enthusiastic",
+    "Mean": "adj.热情的  热心的"
+  },
+  {
+    "Word": "entire",
+    "Mean": "adj.全部的  整个的  完整的  同性质的  纯正的  全面的"
+  },
+  {
+    "Word": "entitle",
+    "Mean": "vt.给...权利(或资格)    取名为  使有权利"
+  },
+  {
+    "Word": "entrance",
+    "Mean": "n.入口  门口 进入 登场 vt.使神志恍惚"
+  },
+  {
+    "Word": "entry",
+    "Mean": "n.入口处  登记 进入 入口 项目"
+  },
+  {
+    "Word": "envelope",
+    "Mean": "n.信封  封套 封皮 壳层"
+  },
+  {
+    "Word": "environment",
+    "Mean": "n.环境  外界 围绕"
+  },
+  {
+    "Word": "envy",
+    "Mean": "vt. & vi. & n.妒忌  嫉妒 羡慕"
+  },
+  {
+    "Word": "equal",
+    "Mean": "adj.相等的  平等的  胜任的  n.对手  匹敌 同辈 vt.等于  比得 上 [计算机]  相等"
+  },
+  {
+    "Word": "equality",
+    "Mean": "n.等同  平等 相等"
+  },
+  {
+    "Word": "equation",
+    "Mean": "n.方程(式)  等式 均衡 相等"
+  },
+  {
+    "Word": "equip",
+    "Mean": "vt.装备  配备 设 穿..."
+  },
+  {
+    "Word": "equipment",
+    "Mean": "n.装备  设备 配备"
+  },
+  {
+    "Word": "equivalent",
+    "Mean": "adj.相等的  等量的  n.相等物"
+  },
+  {
+    "Word": "era",
+    "Mean": "n.时代  年代 纪元"
+  },
+  {
+    "Word": "erect",
+    "Mean": "vt.建造  建立 使竖立  adj.直立的  竖立的  笔直的"
+  },
+  {
+    "Word": "error",
+    "Mean": "n.错误  谬误 差错"
+  },
+  {
+    "Word": "esp.",
+    "Mean": "adj.(=especial)特别的    特殊的  尤其 adv.(=especially)特别 特殊"
+  },
+  {
+    "Word": "escape",
+    "Mean": "vt. & vi.逃跑  逃脱 避开 逸出 n.逃跑  逃亡 避难设备  adj. 逃避的"
+  },
+  {
+    "Word": "especially",
+    "Mean": "adv.特别  尤其 格外"
+  },
+  {
+    "Word": "essay",
+    "Mean": "n.短文  散文 论文 小品文  尝试 vt.尝试"
+  },
+  {
+    "Word": "essential",
+    "Mean": "adj.必要的  重要的  本质的  n.要素  要点"
+  },
+  {
+    "Word": "establish",
+    "Mean": "vt.建立  设立 确立 创办"
+  },
+  {
+    "Word": "establishment",
+    "Mean": "n.建立  设立 确立 设施 机构 权威"
+  },
+  {
+    "Word": "estimate",
+    "Mean": "vt.估计  估价 评价 n.估计  估价"
+  },
+  {
+    "Word": "etc.",
+    "Mean": "n.附加的人  附加物  以及其它  等等 = etcetera"
+  },
+  {
+    "Word": "Europe",
+    "Mean": "n.欧洲"
+  },
+  {
+    "Word": "European",
+    "Mean": "adj.欧洲的  n.欧洲人"
+  },
+  {
+    "Word": "evaluate",
+    "Mean": "vt.评估  评价 估...的价"
+  },
+  {
+    "Word": "evaporate",
+    "Mean": "vt.使蒸发  vi.蒸发  失去水分  消失"
+  },
+  {
+    "Word": "eve",
+    "Mean": "n.前夜  前夕 前一刻  [Eve] 夏娃"
+  },
+  {
+    "Word": "even",
+    "Mean": "adv.甚至  甚至更  还 恰好 正当 adj.平坦的  偶数的  相等的 均匀的  v.使平坦  相等"
+  },
+  {
+    "Word": "evening",
+    "Mean": "n.傍晚  黄昏 晚上"
+  },
+  {
+    "Word": "event",
+    "Mean": "n.事件  大事 事变 项目 活动"
+  },
+  {
+    "Word": "eventually",
+    "Mean": "adv.终于  最后"
+  },
+  {
+    "Word": "ever",
+    "Mean": "adv.在任何时候   曾经 永远 究竟"
+  },
+  {
+    "Word": "every",
+    "Mean": "adj.每一的  每隔...的"
+  },
+  {
+    "Word": "everybody",
+    "Mean": "pron.每人  人人 各人"
+  },
+  {
+    "Word": "everyday",
+    "Mean": "adj.每天的  日常的  平常的"
+  },
+  {
+    "Word": "everyone",
+    "Mean": "pron.每人  人人 n.每个人"
+  },
+  {
+    "Word": "everything",
+    "Mean": "pron.每件事  事事 一切"
+  },
+  {
+    "Word": "everywhere",
+    "Mean": "adv.到处  处处 无论何处"
+  },
+  {
+    "Word": "evidence",
+    "Mean": "n.根据  证据 证人 vt. & vi.证实  证明"
+  },
+  {
+    "Word": "evident",
+    "Mean": "adj.明显的  明白的"
+  },
+  {
+    "Word": "evil",
+    "Mean": "n.邪恶  罪恶 祸害 adj.邪恶的  坏的"
+  },
+  {
+    "Word": "evolution",
+    "Mean": "n.进化  演化 发展"
+  },
+  {
+    "Word": "evolve",
+    "Mean": "vt. & vi.使进化  使发展  展开"
+  },
+  {
+    "Word": "exact",
+    "Mean": "adj.确切的  精确的  vt.强求  要求 索取"
+  },
+  {
+    "Word": "exactly",
+    "Mean": "adv.确切地  恰恰正是"
+  },
+  {
+    "Word": "exaggerate",
+    "Mean": "vt. & vi.夸大  夸张"
+  },
+  {
+    "Word": "exam",
+    "Mean": "n.考试  检查 细查=examination   考试"
+  },
+  {
+    "Word": "examination",
+    "Mean": "n.考试  检查 细查 审讯"
+  },
+  {
+    "Word": "examine",
+    "Mean": "vt.检查  仔细观察  调查 考试 vi.调查  [计算机]  检测"
+  },
+  {
+    "Word": "example",
+    "Mean": "n.例子  实例 模范 榜样 vt.把...作为例子"
+  },
+  {
+    "Word": "exceed",
+    "Mean": "vt.超过  胜过 超出 超出界限  vi.领先"
+  },
+  {
+    "Word": "exceedingly",
+    "Mean": "adv.极端地  非常 很"
+  },
+  {
+    "Word": "excellent",
+    "Mean": "adj.优秀的  杰出的"
+  },
+  {
+    "Word": "except",
+    "Mean": "prep. & conj.除了...之外   若不是  除非 vt.除 除外"
+  },
+  {
+    "Word": "exception",
+    "Mean": "n.例外  除外"
+  },
+  {
+    "Word": "excess",
+    "Mean": "n.超越  过量 过度 adj.过量的  额外的"
+  },
+  {
+    "Word": "excessive",
+    "Mean": "adj.过多的  过分的  极度的"
+  },
+  {
+    "Word": "exchange",
+    "Mean": "vt. & vi.交换  交流 交易 兑换 n.交换  交换物  汇兑 交易所"
+  },
+  {
+    "Word": "excite",
+    "Mean": "vt.使激动  引起 刺激 激励"
+  },
+  {
+    "Word": "exciting",
+    "Mean": "adj.令人兴奋的"
+  },
+  {
+    "Word": "exclaim",
+    "Mean": "vi.呼喊  惊叫 大声叫"
+  },
+  {
+    "Word": "exclude",
+    "Mean": "vt.把...排除在外   拒绝 [计算机]  排除"
+  },
+  {
+    "Word": "exclusively",
+    "Mean": "adv.专门地  排他地(独占地   专门地  仅仅 只)"
+  },
+  {
+    "Word": "excursion",
+    "Mean": "n.远足  短途旅行"
+  },
+  {
+    "Word": "excuse",
+    "Mean": "vt.原谅  免除 辩解 准许离开  同意赦免  n.借口  理由 低劣的 样品 假条"
+  },
+  {
+    "Word": "execute",
+    "Mean": "vt.将...处死   实施 执行 完成 [计算机]  执行"
+  },
+  {
+    "Word": "executive",
+    "Mean": "adj.执行的  行政的  决策的  经营的  [计算机]  执行指令  n.执 行者 主管 行政部门"
+  },
+  {
+    "Word": "exercise",
+    "Mean": "n.锻炼  训练 练习 作业 运动 vi.练习  锻炼 vt.运用"
+  },
+  {
+    "Word": "exert",
+    "Mean": "vt.尽(力)  运用 施加(压力  影响等)"
+  },
+  {
+    "Word": "exhaust",
+    "Mean": "vt.使筋疲力尽   用尽 排空 vi.耗尽  n.排气  排气装置"
+  },
+  {
+    "Word": "exhibit",
+    "Mean": "vt.显示(感情或品质)    陈列 展览 展现 提出证据  vi.展览  n. 展览品  展览 物证"
+  },
+  {
+    "Word": "exhibition",
+    "Mean": "n.展览  陈列 展示 展览会"
+  },
+  {
+    "Word": "exist",
+    "Mean": "vi.存在  生存 生活"
+  },
+  {
+    "Word": "existence",
+    "Mean": "n.存在  实在 生存"
+  },
+  {
+    "Word": "exit",
+    "Mean": "n.出口  退场 离去 vi.退出  死亡 vt.离开"
+  },
+  {
+    "Word": "expand",
+    "Mean": "vt.扩大  增加 详述 扩展 使膨胀  vi.扩展  增加 详述"
+  },
+  {
+    "Word": "expansion",
+    "Mean": "n.扩大  扩充 扩张 膨胀"
+  },
+  {
+    "Word": "expect",
+    "Mean": "vt.预料  预期 等待 盼望"
+  },
+  {
+    "Word": "expectation",
+    "Mean": "n.期待  期望 预期"
+  },
+  {
+    "Word": "expense",
+    "Mean": "n.花费  消费 费用 代价"
+  },
+  {
+    "Word": "expensive",
+    "Mean": "adj.昂贵的  花钱多的  豪华的"
+  },
+  {
+    "Word": "experience",
+    "Mean": "n.经验  感受 经历 vt.经历  体验"
+  },
+  {
+    "Word": "experiment",
+    "Mean": "n.实验  试验 尝试 vi.做实验  尝试"
+  },
+  {
+    "Word": "experimental",
+    "Mean": "adj实验(性)的   试验(性)的"
+  },
+  {
+    "Word": "expert",
+    "Mean": "n.专家  能手 adj.熟练的  内行的  vi.当专家"
+  },
+  {
+    "Word": "explain",
+    "Mean": "vt. & vi.解释  说明 为...辩解"
+  },
+  {
+    "Word": "explanation",
+    "Mean": "n.解释  说明 辩解"
+  },
+  {
+    "Word": "explode",
+    "Mean": "vt.使爆炸  驳倒 vi.爆炸  爆发(感情)  激增 [计算机]  爆炸"
+  },
+  {
+    "Word": "exploit",
+    "Mean": "vt. & vi.剥削  利用 开拓 开发 n.功绩  勋绩"
+  },
+  {
+    "Word": "explore",
+    "Mean": "vt. & vi.探险  探索 探测 探究 [计算机]  探讨"
+  },
+  {
+    "Word": "explosion",
+    "Mean": "n.爆炸  爆发 炸裂 激增"
+  },
+  {
+    "Word": "explosive",
+    "Mean": "n.炸药  adj.爆炸(性)的"
+  },
+  {
+    "Word": "export",
+    "Mean": "vt.输出  出口 运走 n.出口  输出品  vi.传播  输出 adj.出口的"
+  },
+  {
+    "Word": "expose",
+    "Mean": "vt.使暴露  揭露 揭穿 使遭受(危险或不快)"
+  },
+  {
+    "Word": "exposure",
+    "Mean": "n.暴露  揭露 显露 曝光 面临(困难)"
+  },
+  {
+    "Word": "express",
+    "Mean": "vt.表达  表示 挤压出  快递 n.快车  快递 专使 adj.急速的  明 确的 直接的  adv.用快递  特意地"
+  },
+  {
+    "Word": "expression",
+    "Mean": "n.词句  措辞 表达 表示 表现 表情"
+  },
+  {
+    "Word": "extend",
+    "Mean": "vt.延长  延伸 伸展 扩大 扩充 扩展 致"
+  },
+  {
+    "Word": "extension",
+    "Mean": "n.延长部分  伸展 扩充 范围 分机号码"
+  },
+  {
+    "Word": "extensive",
+    "Mean": "adj.广阔的  广泛的"
+  },
+  {
+    "Word": "extent",
+    "Mean": "n.广度  范围 程度 宽度 长度 大小 [律] <英>扣押  <美>临时 所有权令"
+  },
+  {
+    "Word": "exterior",
+    "Mean": "adj.外部的  外在的  表面的  对外的  [计算机]  外部的  n.外部 表面 外型"
+  },
+  {
+    "Word": "external",
+    "Mean": "adj.外部的  外面的  外用的  客观的  表面的  n.外部"
+  },
+  {
+    "Word": "extra",
+    "Mean": "adj.额外的  ad.特别地  n.额外的事物   另外收费的"
+  },
+  {
+    "Word": "extraordinary",
+    "Mean": "adj.非同寻常的   特别的  非凡的  特派的"
+  },
+  {
+    "Word": "extreme",
+    "Mean": "adj.极度的  极端的  尽头的  严重的  末端的  n.极端  极限"
+  },
+  {
+    "Word": "extremely",
+    "Mean": "adv.极端  极其 非常"
+  },
+  {
+    "Word": "eye",
+    "Mean": "n.眼睛  眼力 鉴赏力  v.看 注视"
+  },
+  {
+    "Word": "eyesight",
+    "Mean": "n.视力  目力"
+  }
+]
