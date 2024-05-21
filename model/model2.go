@@ -16,21 +16,7 @@ type ModelObj struct {
 	Major       string      `json:"major"`
 	TotalTime   int         `json:"totalTime"`
 	Mark        int         `json:"mark"`
-	List        []struct {
-		PaperDetailId string      `json:"paperDetailId"`
-		Title         string      `json:"title"`
-		AnswerA       string      `json:"answerA"`
-		AnswerB       string      `json:"answerB"`
-		AnswerC       string      `json:"answerC"`
-		AnswerD       string      `json:"answerD"`
-		QuestionId    interface{} `json:"questionId"`
-		QuestionNum   interface{} `json:"questionNum"`
-		Answer        interface{} `json:"answer"`
-		Input         interface{} `json:"input"`
-		Level         int         `json:"level"`
-		Cet           int         `json:"cet"`
-		Right         interface{} `json:"right"`
-	} `json:"list"`
+	List        []ListItem  `json:"list"`
 	FinalResult interface{} `json:"finalResult"`
 	Status      interface{} `json:"status"`
 }
@@ -53,4 +39,20 @@ type Question struct {
 	AnswerB       string `json:"answerB"`
 	AnswerC       string `json:"answerC"`
 	AnswerD       string `json:"answerD"`
+}
+
+type ListItem struct {
+	PaperDetailId string      `json:"paperDetailId"`
+	Title         string      `json:"title"`
+	AnswerA       string      `json:"answerA"`
+	AnswerB       string      `json:"answerB"`
+	AnswerC       string      `json:"answerC"`
+	AnswerD       string      `json:"answerD"`
+	QuestionId    interface{} `json:"questionId"`
+	QuestionNum   interface{} `json:"questionNum"`
+	Answer        interface{} `json:"answer"`
+	Input         interface{} `json:"input"`
+	Level         int         `json:"level"`
+	Cet           int         `json:"cet"`
+	Right         interface{} `json:"right"`
 }

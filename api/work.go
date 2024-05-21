@@ -8,13 +8,12 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strconv"
 )
 
 const (
-	apiKey      = ""
-	secretKey   = ""
-	apiEndpoint = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions_preemptible"
+	apiKey      = "xcqrCYyJ76uSFqeHgb3i0IDw"
+	secretKey   = "renAUjjDoeTHjok6ViPS06ClP5yIIj4w"
+	apiEndpoint = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat"
 )
 
 // 假设的 API 请求结构体
@@ -27,37 +26,52 @@ type ResponseBody struct {
 	Answer string `json:"answer"` // 文心一言的响应文本
 }
 
+//func ConvertToText(ques *model.ModelObj) string {
+//	res := make([]model.Question, 100)
+//	for i, _ := range ques.List {
+//		res1 := model.Question{
+//			PaperDetailId: ques.List[i].PaperDetailId,
+//			Title:         ques.List[i].Title,
+//			AnswerA:       ques.List[i].AnswerA,
+//			AnswerB:       ques.List[i].AnswerB,
+//			AnswerC:       ques.List[i].AnswerC,
+//			AnswerD:       ques.List[i].AnswerD,
+//		}
+//		res = append(res, res1)
+//	}
+//	m, _ := json.Marshal(res)
+//	return string(m)
+//}
+
 func ConvertToText(ques *model.ModelObj) string {
-	res := make([]model.Question, 100)
-	for i, _ := range ques.List {
-		res1 := model.Question{
-			PaperDetailId: ques.List[i].PaperDetailId,
-			Title:         ques.List[i].Title,
-			AnswerA:       ques.List[i].AnswerA,
-			AnswerB:       ques.List[i].AnswerB,
-			AnswerC:       ques.List[i].AnswerC,
-			AnswerD:       ques.List[i].AnswerD,
-		}
-		res = append(res, res1)
+	// 转换 ModelObj 为文本格式
+	// 假设 ModelObj 包含一个 List 字段，其每个元素都有 Title 和四个答案选项
+	var text string
+	for _, item := range ques.List {
+		text += item.Title + "\nA. " + item.AnswerA + "\nB. " + item.AnswerB + "\nC. " + item.AnswerC + "\nD. " + item.AnswerD + "\n"
 	}
-	m, _ := json.Marshal(res)
-	return string(m)
+	return text
 }
 
 func GetAns(ques *model.ModelObj) (*model.Result, error) {
-	// 替换为你的 API 密钥和端点
-
 	tokenResp, err := GetToken(apiKey, secretKey)
 	if err != nil {
+		fmt.Println("take token is error")
 		return nil, err
 	}
 	text := ConvertToText(ques)
 	reqBody := RequestBody{
-		Text: "我会给你一串翻译题，返回给我正确的序号，例如A,B,C,D.题目如下：" + text,
+		Text: "我会给你一串翻译题，返回给我正确的序号，例如A,B,C,D题目如下：" + text,
+	}
+	var b []byte
+	_ = json.Unmarshal(b, &reqBody)
+	if len(b)%2 == 1 {
+		reqBody.Text += "."
 	}
 
 	u, err := url.Parse(apiEndpoint)
 	if err != nil {
+		fmt.Println("error parsing url ")
 		return nil, fmt.Errorf("error parsing URL: %w", err)
 	}
 
@@ -67,6 +81,7 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 
 	body, err := json.Marshal(reqBody)
 	if err != nil {
+		fmt.Println("error marshalling request body ")
 		return nil, fmt.Errorf("error marshalling request body: %w", err)
 	}
 
@@ -79,6 +94,7 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
+		fmt.Println("error sending request ")
 		return nil, fmt.Errorf("error sending request: %w", err)
 	}
 	defer resp.Body.Close()
@@ -94,23 +110,23 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 	fmt.Println("respBody: ", string(respBody))
 	var response ResponseBody
 	err = json.Unmarshal(respBody, &response)
-
-	var res model.Result
-	res.PaperId = ques.PaperId
-	res.Type = ques.Type
-	for i, _ := range response.Answer {
-		list1 := model.Answer{
-			Input:         strconv.Itoa(int(response.Answer[i])),
-			PaperDetailId: ques.List[i].PaperDetailId,
-		}
-		res.List = append(res.List, list1)
-	}
 	if err != nil {
 		return nil, fmt.Errorf("error unmarshalling response body: %w", err)
 	}
 
+	var res model.Result
+	res.PaperId = ques.PaperId
+	res.Type = ques.Type
+	for i, ans := range response.Answer {
+		list1 := model.Answer{
+			Input:         ans,
+			PaperDetailId: ques.List[i].PaperDetailId,
+		}
+		res.List = append(res.List, list1)
+	}
+
 	fmt.Println("Answer:", response.Answer)
-	return &model.Result{}, nil
+	return &res, nil
 }
 
 type TokenResponse struct {
