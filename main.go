@@ -3,6 +3,7 @@ package main
 import (
 	api "Iltmw/api"
 	"Iltmw/model"
+	"bytes"
 	"crypto/rand"
 	"encoding/json"
 	"fmt"
@@ -29,7 +30,7 @@ import (
 const url = "https://sso.hdu.edu.cn/login?service=https:%2F%2Fi.hdu.edu.cn%2Fsopcb%2F"
 const username = "23050118"
 const password = "E:13819517722@163.com"
-const tokens = "23cc3796-572b-4d30-b465-6160ee075810"
+const tokens = "3d6ed001-e2fa-42dd-b491-e69ae4d21ac4"
 const week = 12
 const mode = 0
 
@@ -90,6 +91,37 @@ func request(token string, week int, mode string) {
 		panic(err)
 	}
 	fmt.Println("试卷信息存储完毕")
-	api.GetAns(q)
+	res, err := api.GetAns(q)
+	if err != nil {
+		panic("get ans is wrong...")
+		return
+	}
 	fmt.Println("等待提交试卷")
+
+	time.Sleep(5 * time.Second)
+	Submit(res, token)
+}
+
+func Submit(res *model.Result, token string) error {
+	b, _ := json.Marshal(res)
+	req, err := http.NewRequest(http.MethodPost, "https://skl.hdu.edu.cn/api/paper/save", bytes.NewBuffer(b))
+	if err != nil {
+		return err
+	}
+
+	req.Header = GetHeaders(token)
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.6367.118 Safari/537.36")
+	req.Header.Set("Accept", "application/json, text/plain, */*")
+	client := http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return err
+	}
+
+	fmt.Println("提交试卷成功")
+	fmt.Println("提交试卷后的返回结果为：", resp)
+
+	return nil
+
 }

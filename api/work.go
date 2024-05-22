@@ -13,17 +13,36 @@ import (
 const (
 	apiKey      = "xcqrCYyJ76uSFqeHgb3i0IDw"
 	secretKey   = "renAUjjDoeTHjok6ViPS06ClP5yIIj4w"
-	apiEndpoint = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/yi_34b_chat"
+	apiEndpoint = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie_speed"
 )
 
 // 假设的 API 请求结构体
+//type RequestBody struct {
+//	Text string `json:"text"` // 你要发送给文心一言的文本
+//}
+
+type Message struct {
+	Role    string `json:"role"`
+	Content string `json:"content"`
+}
+
 type RequestBody struct {
-	Text string `json:"text"` // 你要发送给文心一言的文本
+	Messages []Message `json:"messages"`
 }
 
 // 假设的 API 响应结构体
 type ResponseBody struct {
-	Answer string `json:"answer"` // 文心一言的响应文本
+	ID               string `json:"id"`
+	Object           string `json:"object"`
+	Created          int64  `json:"created"`
+	Result           string `json:"result"`
+	IsTruncated      bool   `json:"is_truncated"`
+	NeedClearHistory bool   `json:"need_clear_history"`
+	Usage            struct {
+		PromptTokens     int `json:"prompt_tokens"`
+		CompletionTokens int `json:"completion_tokens"`
+		TotalTokens      int `json:"total_tokens"`
+	}
 }
 
 //func ConvertToText(ques *model.ModelObj) string {
@@ -59,14 +78,19 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 		fmt.Println("take token is error")
 		return nil, err
 	}
+
 	text := ConvertToText(ques)
-	reqBody := RequestBody{
-		Text: "我会给你一串翻译题，返回给我正确的序号，例如A,B,C,D题目如下：" + text,
+	messages := []Message{
+		{Role: "user", Content: "我会给你一百题翻译题，你只需要给我返回正确的选项，你需要做到百分之八十的正确率，题目如下：" + text},
 	}
-	var b []byte
-	_ = json.Unmarshal(b, &reqBody)
-	if len(b)%2 == 1 {
-		reqBody.Text += "."
+
+	// 确保消息数量为奇数
+	if len(messages)%2 == 0 {
+		messages = append(messages, Message{Role: "system", Content: "确保消息数量为奇数"})
+	}
+
+	reqBody := RequestBody{
+		Messages: messages,
 	}
 
 	u, err := url.Parse(apiEndpoint)
@@ -113,20 +137,34 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 	if err != nil {
 		return nil, fmt.Errorf("error unmarshalling response body: %w", err)
 	}
+	fmt.Println("response: ", response.Result)
 
 	var res model.Result
 	res.PaperId = ques.PaperId
 	res.Type = ques.Type
-	for i, ans := range response.Answer {
-		list1 := model.Answer{
-			Input:         ans,
-			PaperDetailId: ques.List[i].PaperDetailId,
+	//for i, ans := range response.Answer {
+	//	list1 := model.Answer{
+	//		Input:         ans,
+	//		PaperDetailId: ques.List[i].PaperDetailId,
+	//	}
+	//	res.List = append(res.List, list1)
+	//}
+	//
+	//fmt.Println(res)
+	var cnt int
+	for i := 0; i < len(response.Result); i++ {
+		result := string(response.Result[i])
+		if result == "A" || result == "B" || result == "C" || result == "D" {
+			res.List = append(res.List, model.Answer{
+				Input:         result,
+				PaperDetailId: ques.List[cnt].PaperDetailId,
+			})
+			cnt++
 		}
-		res.List = append(res.List, list1)
 	}
-
-	fmt.Println("Answer:", response.Answer)
+	//return &res, nil
 	return &res, nil
+
 }
 
 type TokenResponse struct {
