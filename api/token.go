@@ -14,48 +14,6 @@ type TokenResponse struct {
 	ExpiresIn   int    `json:"expires_in"`
 }
 
-//func GetToken(apiKey string, secretKey string) (*TokenResponse, error) {
-//	baseUrl := "https://aip.baidubce.com/oauth/2.0/token"
-//
-//	u, err := url.Parse(baseUrl)
-//	if err != nil {
-//		fmt.Println("Error parsing url...")
-//		return nil, err
-//	}
-//
-//	query := u.Query()
-//	query.Set("grant_type", "client_credentials")
-//	query.Set("client_id", apiKey)
-//	query.Set("client_secret", secretKey)
-//	u.RawQuery = query.Encode()
-//
-//	req, err := http.NewRequest("POST", u.String(), nil)
-//	if err != nil {
-//		fmt.Println("Error creating request...")
-//		return nil, err
-//	}
-//	req.Header.Set("Content-Type", "application/json")
-//
-//	cli := http.Client{}
-//	resp, err := cli.Do(req)
-//	if err != nil {
-//		return nil, err
-//	}
-//
-//	defer resp.Body.Close()
-//
-//	if resp.StatusCode != http.StatusOK {
-//		return nil, fmt.Errorf("failed to get the baidu token...")
-//	}
-//
-//	var token TokenResponse
-//	if err := json.NewDecoder(resp.Body).Decode(&token); err != nil {
-//		return nil, err
-//	}
-//
-//	return &token, nil
-//}
-
 func GetToken(apiKey string, secretKey string) (*TokenResponse, error) {
 	baseUrl := "https://aip.baidubce.com/oauth/2.0/token"
 	data := url.Values{}

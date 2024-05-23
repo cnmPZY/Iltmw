@@ -13,9 +13,9 @@ import (
 )
 
 const (
-	apiKey      = "xcqrCYyJ76uSFqeHgb3i0IDw"
-	secretKey   = "renAUjjDoeTHjok6ViPS06ClP5yIIj4w"
-	apiEndpoint = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie_speed"
+	apiKey      = ""
+	secretKey   = ""
+	apiEndpoint = ""
 	batchSize   = 5
 )
 
@@ -149,7 +149,6 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 				fmt.Println("paperDetailedID: ", ques.List[cnt].PaperDetailId, "input: ", reStr[k])
 				cnt++
 			}
-			time.Sleep(3 * time.Second)
 		} else {
 			for k := 0; k < 5; k++ {
 				allAnswers[cnt] = model.Answer{
@@ -160,6 +159,7 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 				cnt++
 			}
 		}
+		time.Sleep(3 * time.Second)
 	}
 	res.PaperId = ques.PaperId
 	res.Type = ques.Type
@@ -167,6 +167,10 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 
 	fmt.Println("-----------------------------------------------------------")
 	fmt.Println("res: ", res)
+	fmt.Println("please wait for 5 minutes to submit the paper")
+	time.Sleep(5 * time.Minute)
+	fmt.Println("-----------------------------------------------------------")
+	fmt.Println("submitting is ok ....")
 	return &res, nil
 }
 

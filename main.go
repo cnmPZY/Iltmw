@@ -25,14 +25,9 @@ import (
 // 再调用提交的接口，把这个新的Json提交上去，就可以了。
 // 如果是电脑上做题目，就需要带上手机的user
 
-// https://github.com/hdulib/hdu
-
-const url = "https://sso.hdu.edu.cn/login?service=https:%2F%2Fi.hdu.edu.cn%2Fsopcb%2F"
-const username = "23050118"
-const password = "E:13819517722@163.com"
-const tokens = "0c79c423-6594-4409-b5d6-a4c554be7e06"
-const week = 12
-const mode = 0
+const tokens = "" // 输入你的 token
+const week = 0    // 输入这是第几周
+const mode = 0    // 0 为自测，1 为考试
 
 func main() {
 	request(tokens, week, strconv.Itoa(mode))
