@@ -131,33 +131,35 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 
 		reStr, exist := Rematch(response.Result)
 
-		if !exist {
-			allAnswers[cnt] = model.Answer{
-				Input:         "A",
-				PaperDetailId: ques.List[cnt].PaperDetailId,
+		if exist {
+			//split := strings.Split(reStr, "-")
+			for k := 0; k < 5; k++ {
+				if (k+1 > len(reStr) || len(reStr) == 0) && cnt <= len(ques.List) {
+					allAnswers[cnt] = model.Answer{
+						Input:         "A",
+						PaperDetailId: ques.List[cnt].PaperDetailId,
+					}
+					cnt++
+					continue
+				}
+				allAnswers[cnt] = model.Answer{
+					Input:         reStr[k],
+					PaperDetailId: ques.List[cnt].PaperDetailId,
+				}
+				fmt.Println("paperDetailedID: ", ques.List[cnt].PaperDetailId, "input: ", reStr[k])
+				cnt++
 			}
-			fmt.Println("the gpt given answer's construction is wrong , use A as default")
-			cnt++
-			continue
-		}
-		//split := strings.Split(reStr, "-")
-		for k := 0; k < 5; k++ {
-			if (k+1 > len(reStr) || len(reStr) == 0) && cnt <= len(ques.List) {
+			time.Sleep(3 * time.Second)
+		} else {
+			for k := 0; k < 5; k++ {
 				allAnswers[cnt] = model.Answer{
 					Input:         "A",
 					PaperDetailId: ques.List[cnt].PaperDetailId,
 				}
+				fmt.Println("the gpt given answer's construction is wrong , use A as default")
 				cnt++
-				continue
 			}
-			allAnswers[cnt] = model.Answer{
-				Input:         reStr[k],
-				PaperDetailId: ques.List[cnt].PaperDetailId,
-			}
-			fmt.Println("paperDetailedID: ", ques.List[cnt].PaperDetailId, "input: ", reStr[k])
-			cnt++
 		}
-		time.Sleep(3 * time.Second)
 	}
 	res.PaperId = ques.PaperId
 	res.Type = ques.Type
