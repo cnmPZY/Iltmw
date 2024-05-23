@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
-	"strings"
 	"time"
 )
 
@@ -141,9 +140,9 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 			cnt++
 			continue
 		}
-		split := strings.Split(reStr, "-")
+		//split := strings.Split(reStr, "-")
 		for k := 0; k < 5; k++ {
-			if (k+1 > len(split) || reStr == "") && cnt <= len(ques.List) {
+			if (k+1 > len(reStr) || len(reStr) == 0) && cnt <= len(ques.List) {
 				allAnswers[cnt] = model.Answer{
 					Input:         "A",
 					PaperDetailId: ques.List[cnt].PaperDetailId,
@@ -152,10 +151,10 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 				continue
 			}
 			allAnswers[cnt] = model.Answer{
-				Input:         split[k],
+				Input:         reStr[k],
 				PaperDetailId: ques.List[cnt].PaperDetailId,
 			}
-			fmt.Println("paperDetailedID: ", ques.List[cnt].PaperDetailId, "input: ", split[k])
+			fmt.Println("paperDetailedID: ", ques.List[cnt].PaperDetailId, "input: ", reStr[k])
 			cnt++
 		}
 		time.Sleep(3 * time.Second)
@@ -169,18 +168,19 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 	return &res, nil
 }
 
-func Rematch(resp string) (string, bool) {
-	pattern := `[A-D]-[A-D]-[A-D]-[A-D]-[A-D]`
+func Rematch(resp string) ([]string, bool) {
+	//pattern := `[A-D]-[A-D]-[A-D]-[A-D]-[A-D]`
+	pattern := `[A-D]`
 
 	re := regexp.MustCompile(pattern)
 
-	matches := re.FindString(resp)
+	matches := re.FindAllString(resp, -1)
 
 	//for _, match := range matches {
 	//	fmt.Println("match: ", match)
 	//}
-	if matches == "" {
-		return "", false
+	if matches == nil {
+		return nil, false
 	}
 
 	return matches, true
