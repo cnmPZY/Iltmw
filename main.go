@@ -30,7 +30,7 @@ import (
 const url = "https://sso.hdu.edu.cn/login?service=https:%2F%2Fi.hdu.edu.cn%2Fsopcb%2F"
 const username = "23050118"
 const password = "E:13819517722@163.com"
-const tokens = "c6770342-9d97-4cc3-8ed7-f3becc60719c"
+const tokens = "0c79c423-6594-4409-b5d6-a4c554be7e06"
 const week = 12
 const mode = 0
 

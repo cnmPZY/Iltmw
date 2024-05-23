@@ -17,6 +17,7 @@ const (
 	apiKey      = "xcqrCYyJ76uSFqeHgb3i0IDw"
 	secretKey   = "renAUjjDoeTHjok6ViPS06ClP5yIIj4w"
 	apiEndpoint = "https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/ernie_speed"
+	batchSize   = 5
 )
 
 type Message struct {
@@ -43,121 +44,6 @@ type ResponseBody struct {
 	}
 }
 
-//func ConvertToText(ques *model.ModelObj) string {
-//	res := make([]model.Question, 100)
-//	for i, _ := range ques.List {
-//		res1 := model.Question{
-//			PaperDetailId: ques.List[i].PaperDetailId,
-//			Title:         ques.List[i].Title,
-//			AnswerA:       ques.List[i].AnswerA,
-//			AnswerB:       ques.List[i].AnswerB,
-//			AnswerC:       ques.List[i].AnswerC,
-//			AnswerD:       ques.List[i].AnswerD,
-//		}
-//		res = append(res, res1)
-//	}
-//	m, _ := json.Marshal(res)
-//	return string(m)
-//}
-
-//func ConvertToText(ques *model.ModelObj) string {
-//	// 转换 ModelObj 为文本格式
-//	// 假设 ModelObj 包含一个 List 字段，其每个元素都有 Title 和四个答案选项
-//	var text string
-//	for _, item := range ques.List {
-//		text += item.Title + "\nA. " + item.AnswerA + "\nB. " + item.AnswerB + "\nC. " + item.AnswerC + "\nD. " + item.AnswerD + "\n"
-//	}
-//	return text
-//}
-
-//func GetAns(ques *model.ModelObj) (*model.Result, error) {
-//	tokenResp, err := GetToken(apiKey, secretKey)
-//	if err != nil {
-//		fmt.Println("take token is error")
-//		return nil, err
-//	}
-//
-//	text := ConvertToText(ques)
-//	messages := []Message{
-//		{Role: "user", Content: "我会给你5题翻译题，你只需要给我返回正确的选项，你需要做到百分之八十的正确率，题目如下：" + text},
-//	}
-//
-//	// 确保消息数量为奇数
-//	if len(messages)%2 == 0 {
-//		messages = append(messages, Message{Role: "system", Content: "确保消息数量为奇数"})
-//	}
-//
-//	reqBody := RequestBody{
-//		Messages: messages,
-//	}
-//
-//	u, err := url.Parse(apiEndpoint)
-//	if err != nil {
-//		fmt.Println("error parsing url ")
-//		return nil, fmt.Errorf("error parsing URL: %w", err)
-//	}
-//
-//	query := u.Query()
-//	query.Set("access_token", tokenResp.AccessToken)
-//	u.RawQuery = query.Encode()
-//
-//	body, err := json.Marshal(reqBody)
-//	if err != nil {
-//		fmt.Println("error marshalling request body ")
-//		return nil, fmt.Errorf("error marshalling request body: %w", err)
-//	}
-//
-//	req, err := http.NewRequest("POST", u.String(), bytes.NewBuffer(body))
-//	if err != nil {
-//		return nil, fmt.Errorf("error creating request: %w", err)
-//	}
-//	req.Header.Set("Content-Type", "application/json")
-//
-//	client := &http.Client{}
-//	resp, err := client.Do(req)
-//	if err != nil {
-//		fmt.Println("error sending request ")
-//		return nil, fmt.Errorf("error sending request: %w", err)
-//	}
-//	defer resp.Body.Close()
-//
-//	if resp.StatusCode != http.StatusOK {
-//		return nil, fmt.Errorf("failed to get answer: status code %d", resp.StatusCode)
-//	}
-//
-//	respBody, err := ioutil.ReadAll(resp.Body)
-//	if err != nil {
-//		return nil, fmt.Errorf("error reading response body: %w", err)
-//	}
-//	fmt.Println("respBody: ", string(respBody))
-//	var response ResponseBody
-//	err = json.Unmarshal(respBody, &response)
-//	if err != nil {
-//		return nil, fmt.Errorf("error unmarshalling response body: %w", err)
-//	}
-//	fmt.Println("response: ", response.Result)
-//
-//	var res model.Result
-//	res.PaperId = ques.PaperId
-//	res.Type = ques.Type
-//	// ------------------------------
-//	var cnt int
-//	for i := 0; i < len(response.Result); i++ {
-//		result := string(response.Result[i])
-//		if result == "A" || result == "B" || result == "C" || result == "D" {
-//			res.List = append(res.List, model.Answer{
-//				Input:         result,
-//				PaperDetailId: ques.List[cnt].PaperDetailId,
-//			})
-//			cnt++
-//		}
-//	}
-//	//---------------------------
-//
-//	return &res, nil
-//
-//}
-
 func ConvertToText(ques *model.ModelObj, start, end int) string {
 	var text string
 	for _, item := range ques.List[start:end] {
@@ -173,11 +59,10 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 		return nil, err
 	}
 
-	var allAnswers = make([]model.Answer, 99)
+	var allAnswers = make([]model.Answer, 100)
 	var res model.Result
 	var cnt int
 	res.List = make([]model.Answer, 100)
-	batchSize := 5
 	for i := 0; i < len(ques.List); i += batchSize {
 		end := i + batchSize
 		if end > len(ques.List) {
@@ -186,7 +71,7 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 
 		text := ConvertToText(ques, i, end)
 		messages := []Message{
-			{Role: "user", Content: "我会给你5题翻译题，你一定要给我返回正确答案的序号，一道翻译题中只能出现一个大写字母即正确答案的序号，返回的答案的格式为`x-x-x-x-x`，x表示正确的序号，题目如下：" + text},
+			{Role: "user", Content: "我会给你5题翻译题，你一定要给我返回正确答案的序号，一道翻译题中只能出现一个大写字母即正确答案的序号，返回的答案的格式为`x-x-x-x-x`，x表示正确的序号，我只需要相应格式的答案，不需要解释。题目如下：" + text},
 		}
 
 		// 确保消息数量为奇数
@@ -236,7 +121,7 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 		if err != nil {
 			return nil, fmt.Errorf("error reading response body: %w", err)
 		}
-		fmt.Println("respBody: ", string(respBody))
+		//fmt.Println("respBody: ", string(respBody))
 		var response ResponseBody
 		err = json.Unmarshal(respBody, &response)
 		if err != nil {
@@ -245,27 +130,35 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 
 		fmt.Println("response: ", response.Result)
 
-		reStr := Rematch(response.Result)
+		reStr, exist := Rematch(response.Result)
 
+		if !exist {
+			allAnswers[cnt] = model.Answer{
+				Input:         "A",
+				PaperDetailId: ques.List[cnt].PaperDetailId,
+			}
+			fmt.Println("the gpt given answer's construction is wrong , use A as default")
+			cnt++
+			continue
+		}
 		split := strings.Split(reStr, "-")
-		for k := 1; k <= 5; k++ {
-			if k <= len(split) {
-				s := split[k]
-				if s == "A" || s == "B" || s == "C" || s == "D" {
-					allAnswers[cnt] = model.Answer{
-						Input:         s,
-						PaperDetailId: ques.List[cnt].PaperDetailId,
-					}
-					cnt++
-				}
-			} else {
+		for k := 0; k < 5; k++ {
+			if (k+1 > len(split) || reStr == "") && cnt <= len(ques.List) {
 				allAnswers[cnt] = model.Answer{
-					Input:         "C",
+					Input:         "A",
 					PaperDetailId: ques.List[cnt].PaperDetailId,
 				}
 				cnt++
+				continue
 			}
+			allAnswers[cnt] = model.Answer{
+				Input:         split[k],
+				PaperDetailId: ques.List[cnt].PaperDetailId,
+			}
+			fmt.Println("paperDetailedID: ", ques.List[cnt].PaperDetailId, "input: ", split[k])
+			cnt++
 		}
+		time.Sleep(3 * time.Second)
 	}
 	res.PaperId = ques.PaperId
 	res.Type = ques.Type
@@ -276,7 +169,7 @@ func GetAns(ques *model.ModelObj) (*model.Result, error) {
 	return &res, nil
 }
 
-func Rematch(resp string) string {
+func Rematch(resp string) (string, bool) {
 	pattern := `[A-D]-[A-D]-[A-D]-[A-D]-[A-D]`
 
 	re := regexp.MustCompile(pattern)
@@ -286,5 +179,9 @@ func Rematch(resp string) string {
 	//for _, match := range matches {
 	//	fmt.Println("match: ", match)
 	//}
-	return matches
+	if matches == "" {
+		return "", false
+	}
+
+	return matches, true
 }
