@@ -30,7 +30,7 @@ import (
 const url = "https://sso.hdu.edu.cn/login?service=https:%2F%2Fi.hdu.edu.cn%2Fsopcb%2F"
 const username = "23050118"
 const password = "E:13819517722@163.com"
-const tokens = "3d6ed001-e2fa-42dd-b491-e69ae4d21ac4"
+const tokens = "c6770342-9d97-4cc3-8ed7-f3becc60719c"
 const week = 12
 const mode = 0
 
@@ -99,10 +99,14 @@ func request(token string, week int, mode string) {
 	fmt.Println("等待提交试卷")
 
 	time.Sleep(5 * time.Second)
-	Submit(res, token)
+	err = Submit(res, token)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func Submit(res *model.Result, token string) error {
+	time.Sleep(5 * time.Second)
 	b, _ := json.Marshal(res)
 	req, err := http.NewRequest(http.MethodPost, "https://skl.hdu.edu.cn/api/paper/save", bytes.NewBuffer(b))
 	if err != nil {
@@ -120,6 +124,10 @@ func Submit(res *model.Result, token string) error {
 	}
 
 	fmt.Println("提交试卷成功")
+	if resp.StatusCode == 201 {
+		fmt.Println("你不能短时间内自测/考试")
+	}
+
 	fmt.Println("提交试卷后的返回结果为：", resp)
 
 	return nil
