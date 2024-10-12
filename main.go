@@ -25,8 +25,8 @@ import (
 // 再调用提交的接口，把这个新的Json提交上去，就可以了。
 // 如果是电脑上做题目，就需要带上手机的user
 
-const tokens = "" // 输入你的 token
-const week = 0    // 输入这是第几周
+const tokens = "866fc910-6db3-49d4-8e61-cc7132b23316" // 输入你的 token
+const week = 5    // 输入这是第几周
 const mode = 0    // 0 为自测，1 为考试
 
 func main() {
